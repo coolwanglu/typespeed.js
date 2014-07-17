@@ -1,0 +1,42 @@
+/*  vim: set sw=2 ts=2 et : */
+/*
+ * Copyright (c) 2014 Lu Wang <coolwanglu@gmail.com>
+ */
+
+body {
+  background-color: #f5f0eb;
+}
+
+#github-star {
+  position:absolute;
+  top: 32px;
+  right: 128px;
+}
+
+#canvas { 
+  border:1px solid; 
+  padding:5px;
+  line-height:1;
+  /* from bootstrap */
+  border-color: rgb(102, 175, 233);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+}
+
+/* overrides some bootstrap styles */
+.jumbotron { 
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin-bottom: 0px;
+  background-color: transparent;
+  text-align: center;
+}
+.jumbotron code {
+  color: inherit;
+  margin-top: 0px;
+}
+.modal-dialog {
+  display:block;
+}
+.footer {
+  text-align: center;
+}
