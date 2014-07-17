@@ -57,6 +57,7 @@
 #include "typespeed.h"
 
 #define _(string)	gettext(string)
+#define random rand
 
 unsigned long	 cstrl(char *);
 void		 endcursestuff(void);

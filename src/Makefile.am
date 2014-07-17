@@ -1,4 +1,3 @@
-CC = gcc
 AM_CFLAGS = -Wall -W -pedantic -std=c99
 
 HIGHFILE = typespeed.score

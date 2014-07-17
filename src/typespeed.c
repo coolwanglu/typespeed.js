@@ -78,6 +78,10 @@
 #include "pathnames.h"
 #include "typespeed.h"
 
+void emscripten_sleep(int);
+#define srandom srand
+#define randome rand
+
 #define _(string)	gettext(string)
 
 #define DEFAULT_CHEAT		0
@@ -307,9 +311,11 @@ int
 main(int argc, char **argv)
 {
 	int i, wheretogo;
+#if 0 // Lu Wang
 #ifndef WIN32
 	gid_t mygid;
 #endif /* WIN32 */
+#endif 
 	char serv[MAXHOSTNAMELEN];
 	unsigned long val;
 
@@ -322,6 +328,7 @@ main(int argc, char **argv)
 	if ((hfd = open(HIGHFILE, O_RDWR, 0)) == -1)
 		xerr(1, "main: open: %s", HIGHFILE);
 
+#if 0 // Lu Wang
 #ifndef WIN32
 	/* drop privileges */
 	mygid = getgid();
@@ -346,6 +353,7 @@ main(int argc, char **argv)
 	}
 #endif /* HAVE_SETRESGID */
 #endif /* WIN32 */
+#endif
 
 	/* check file descriptors for consistency */
 	if (hfd == STDIN_FILENO || hfd == STDOUT_FILENO ||
@@ -474,7 +482,8 @@ Typespeed comes with ABSOLUTELY NO WARRANTY; for details read COPYING.\n"),
 		setnoblock();
 	}
 
-	sleep(1);
+	//sleep(1);
+    emscripten_sleep(1);
 	initcursestuff();
 
 	if (opt.net == H2H)
@@ -917,7 +926,8 @@ play(void)
 			memset(&other, 0, sizeof(other));
 	}
 
-	sleep(3);
+	//sleep(3);
+	emscripten_sleep(3);
 	drawscreen();
 	xcolor_set(5);
 	refresh();

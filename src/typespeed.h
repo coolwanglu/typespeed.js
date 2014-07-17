@@ -27,10 +27,10 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include <time.h>
 
 #ifdef WIN32
 	#include <dirent.h>
-	#include <time.h>
 
 	#ifndef MAXHOSTNAMELEN
 		#define MAXHOSTNAMELEN	256
