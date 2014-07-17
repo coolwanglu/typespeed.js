@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 [ -z $EM_DIR ] && EM_DIR=~/src/emscripten
-[ -z $PDCURSES_DIR ] && PDCURSES_DIR=~/src/PDCurses-3.4
+[ -z $PDCURSES_DIR ] && PDCURSES_DIR=~/src/PDCurses-emscripten
 
 do_config() {
     echo config
@@ -31,6 +31,6 @@ $EM_DIR/emcc typespeed.bc \
 popd
 }
 
-#do_config
+do_config
 do_make
 do_link
